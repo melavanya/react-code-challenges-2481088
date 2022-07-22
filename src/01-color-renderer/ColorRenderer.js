@@ -1,3 +1,4 @@
+import React from 'react'
 import Color from './Color'
 
 const colors = [{
@@ -19,9 +20,14 @@ const colors = [{
 
 export default function ColorRenderer () {
   return (
+    <React.Fragment>
     <h2>
       Use the Color component to render each
        item in the colors array on the page!
     </h2>
+    {colors.map(item => 
+      <Color hex={item.hex} name={item.name} />
+    )}
+    </React.Fragment>
   )
 }
